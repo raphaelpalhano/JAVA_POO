@@ -9,4 +9,6 @@
 
 4. Controle de fluxo if else for, while
 
+5. Funções - soma, fibonaci, controle
+
 
