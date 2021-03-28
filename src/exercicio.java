@@ -14,6 +14,7 @@ public class exercicio {
         int resultado = soma(valor1, valor2);
         imprimir(resultado);
 
+        input.close();
 
     }
 
