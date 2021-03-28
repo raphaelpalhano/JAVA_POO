@@ -8,7 +8,7 @@ public class exercicio {
         int valor1 = input.nextInt();
 
         
-        System.out.println("Digite outro numero: ");
+        System.out.println("Digite o segundo numero: ");
         int valor2 = input.nextInt();
 
         int resultado = soma(valor1, valor2);
