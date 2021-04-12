@@ -4,7 +4,6 @@ public class fibo {
         int c = 0;
         int i = 0;
         int valor1 = 10;
-        int array[] = new int[10];
         while(x <= valor1){
             if(x == 0){
                 x++;
@@ -12,7 +11,6 @@ public class fibo {
                 System.out.print(x);
                 x = x + c;
                 c = x - c;
-                array[i] = x;
                 i++;
             }
             
