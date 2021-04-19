@@ -26,11 +26,12 @@ public class Market {
                 JOptionPane.showMessageDialog(null, "Our homemadefood are: " + homemadefood[i]);
 
                 }        
-            }
-
-
+            }             
     
     
     }
+
+
+     
 
 }
