@@ -6,6 +6,10 @@ public class CarrosObjeto {
         System.out.println(cliente1.verificarcarro());
         cliente1.comprarcarro("limusine");
         cliente1.listacarro();
+
+        Carros cliente2 = new Carros();
+        cliente2.comprarcarro("Fusca Turbinado");
+        System.out.println(cliente2.verificarcarro());
     }
     
 }
