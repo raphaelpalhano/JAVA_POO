@@ -58,6 +58,12 @@ public class Musica {
         return nomeInterprete; 
     }
 
+    public String getCompositor(){
+        return nomeCompositor; 
+    }
+
+
+
 
 
     public String getAnoComposicao(){
