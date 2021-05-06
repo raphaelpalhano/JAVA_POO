@@ -1,5 +1,9 @@
 import javax.swing.JOptionPane;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class Menu{
 
      
@@ -36,6 +40,7 @@ public class Menu{
         // Variável guardando o valor String que será o nome
         String nomeUser = JOptionPane.showInputDialog("Seu Nome: ");
         JOptionPane.showMessageDialog(null, "Seja bem vindo, " + nomeUser + "!" + " Este e o menu de musicas!");
+        int tamanho = 0;
         // Iniciando o sistema menu:
         while(iniciador == true){
              
@@ -43,19 +48,33 @@ public class Menu{
             if(eNumero(escolha)){
                 switch(escolha){
                     case "1":
-                        for(int i =0; i <= 1000; i++){
-                            minhasMusicas[i] = new Musica();
-                            minhasMusicas[i].setMusica(JOptionPane.showInputDialog("Nome da musica: "));
-                            minhasMusicas[i].setInterprete(JOptionPane.showInputDialog("Interprete: "));
-                            minhasMusicas[i].setCompositor(JOptionPane.showInputDialog("compositor: "));
-                            minhasMusicas[i].setAnoComposicao(JOptionPane.showInputDialog("Ano: "));
+                        for(int i =0; i <= minhasMusicas.length; i++){
+                            if(tamanho >= 1){
+                                minhasMusicas[tamanho] = new Musica();
+                                minhasMusicas[tamanho].setMusica(JOptionPane.showInputDialog("Nome da musica n. " + (tamanho)));
+                                minhasMusicas[tamanho].setInterprete(JOptionPane.showInputDialog("Interprete: n." + (tamanho)));
+                                minhasMusicas[tamanho].setCompositor(JOptionPane.showInputDialog("compositor n. " + ( tamanho)));
+                                minhasMusicas[tamanho].setAnoComposicao(JOptionPane.showInputDialog("Ano n. " + (tamanho )));
+                                
+                            }else{
+                                minhasMusicas[i] = new Musica();
+                                minhasMusicas[i].setMusica(JOptionPane.showInputDialog("Nome da musica: "));
+                                minhasMusicas[i].setInterprete(JOptionPane.showInputDialog("Interprete: "));
+                                minhasMusicas[i].setCompositor(JOptionPane.showInputDialog("compositor: "));
+                                minhasMusicas[i].setAnoComposicao(JOptionPane.showInputDialog("Ano: "));
+                                
+                            }
+                            
+                           
                             String escolher = JOptionPane.showInputDialog("Quer registrar outrar musica? [sim/nao]: ");
+                            tamanho++;
                             if(escolher.equalsIgnoreCase("sim")){
                                 continue;
                             }else{
                                 JOptionPane.showMessageDialog(null, "Voltando para o menu principal.");
                                 break;
                             }
+                            
                         }
                         break;
                     case "2":
@@ -84,6 +103,7 @@ public class Menu{
     
                         }
                         catch(NullPointerException e){
+                            JOptionPane.showMessageDialog(null, "Nao foi encontrado nenhuma musica com esse nome.");
                             JOptionPane.showMessageDialog(null, "Voltando para o menu principal.");
                                 break;
                                 }
@@ -117,7 +137,7 @@ public class Menu{
                                 for(int i =0; i < minhasMusicas.length; i++){
                                     if(escolhaUsuario.equals(minhasMusicas[i].getAnoComposicao())){
                                         JOptionPane.showMessageDialog(null, "Musica n. " + i + " " + "\n" +  "Nome: " + minhasMusicas[i].getMusica() + "\n" + " Ano: " + minhasMusicas[i].getAnoComposicao() + "\n" + " Interprete: " + minhasMusicas[i].getInterprete() + "\n" + "Compositor: " + minhasMusicas[i].getCompositor());
-                                        break;
+                                        
                                     }
                                 }
                             }else{
@@ -126,6 +146,7 @@ public class Menu{
                             }
                         }
                         catch(NullPointerException e){
+                            JOptionPane.showMessageDialog(null, "Nao foram encontradas mais musicas...");
                             JOptionPane.showMessageDialog(null, "Voltando para o menu...");
                             continue;
 
@@ -149,13 +170,11 @@ public class Menu{
                 JOptionPane.showMessageDialog(null, "ERRO. Escolha uma das opcoes 1 ao 5!");
             }
         }
+        
+
     System.exit(0);   
     }
        
     
 }
-
-
-
-    
 
