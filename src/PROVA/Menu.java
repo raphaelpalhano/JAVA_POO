@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class Menu{
 
-     
+     //VALIDADOR DE NÚMEROS INTEIROS
     public static Boolean eNumero(String numero){
         try{
             Integer.parseInt(numero);
@@ -17,13 +17,17 @@ public class Menu{
 
     }
 
-   
-
+    //MAIN
     public static void main(String[] args){
         Musica minhasMusicas[] = new Musica[1000];
         
+        //INICIDOR DO PROGRAMA
         Boolean iniciador;
         iniciador = true;
+        
+        // CONTADOR DE LOOP. UTILIZADO APLICAR O CONCEITO DE QUEE
+        int tamanho = 0;
+
         // DEFININDO O menu
         /*
         Menu 5 opções:
@@ -40,7 +44,7 @@ public class Menu{
         // Variável guardando o valor String que será o nome
         String nomeUser = JOptionPane.showInputDialog("Seu Nome: ");
         JOptionPane.showMessageDialog(null, "Seja bem vindo, " + nomeUser + "!" + " Este e o menu de musicas!");
-        int tamanho = 0;
+       
         // Iniciando o sistema menu:
         while(iniciador == true){
              
@@ -142,13 +146,13 @@ public class Menu{
                                 }
                             }else{
                                 JOptionPane.showMessageDialog(null, "Informacao invalida! Digite um ano com numeros inteiros: (2010).");
-                                continue;
+                                break;
                             }
                         }
                         catch(NullPointerException e){
                             JOptionPane.showMessageDialog(null, "Nao foram encontradas mais musicas...");
                             JOptionPane.showMessageDialog(null, "Voltando para o menu...");
-                            continue;
+                            break;
 
                         }
                         break;
